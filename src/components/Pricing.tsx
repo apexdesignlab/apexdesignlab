@@ -1,0 +1,93 @@
+import { motion } from "framer-motion";
+import { Check } from "lucide-react";
+
+const plans = [
+  {
+    name: "The Essentials",
+    tier: "Business",
+    price: "£80",
+    features: ["3 Pages", "1 Domain", "Static / Booking Site", "Custom Design", "Managed Hosting"],
+    popular: false,
+  },
+  {
+    name: "Growth Lab",
+    tier: "Starter",
+    price: "£100",
+    features: ["8 Pages", "2 Domains", "Compatible Features", "Full SEO Suite", "Priority Support"],
+    popular: true,
+  },
+  {
+    name: "Apex Elite",
+    tier: "Elite",
+    price: "£140",
+    features: ["15 Pages", "5 Domains", "Payments / Custom Types", "E-commerce Suite", "Dedicated Line"],
+    popular: false,
+  },
+];
+
+const Pricing = () => (
+  <section id="pricing" className="relative py-32">
+    <div className="container mx-auto px-6">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.6 }}
+        className="text-center mb-16"
+      >
+        <p className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">The Triple Threat</p>
+        <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Pricing Plans</h2>
+      </motion.div>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        {plans.map((plan, i) => (
+          <motion.div
+            key={plan.name}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: i * 0.1 }}
+            className={`relative glass-card-hover p-8 flex flex-col ${
+              plan.popular ? "border-primary/40 shadow-[0_0_40px_-10px_hsl(var(--primary)/0.25)]" : ""
+            }`}
+          >
+            {plan.popular && (
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-primary text-primary-foreground text-xs font-bold uppercase tracking-wider">
+                Popular
+              </div>
+            )}
+
+            <p className="text-xs font-semibold text-muted-foreground uppercase tracking-widest mb-1">{plan.tier}</p>
+            <h3 className="text-xl font-bold mb-4">{plan.name}</h3>
+
+            <div className="mb-6">
+              <span className="text-4xl font-extrabold">{plan.price}</span>
+              <span className="text-muted-foreground text-sm">/mo</span>
+            </div>
+
+            <ul className="space-y-3 mb-8 flex-1">
+              {plan.features.map((f) => (
+                <li key={f} className="flex items-center gap-3 text-sm">
+                  <Check className="w-4 h-4 text-primary shrink-0" />
+                  <span className="text-muted-foreground">{f}</span>
+                </li>
+              ))}
+            </ul>
+
+            <button
+              className={`w-full py-3 rounded-full font-semibold text-sm transition-all duration-300 ${
+                plan.popular
+                  ? "bg-primary text-primary-foreground hover:shadow-[0_0_25px_-3px_hsl(var(--primary)/0.5)]"
+                  : "border border-border text-foreground hover:bg-secondary"
+              }`}
+            >
+              Get Started
+            </button>
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+export default Pricing;
