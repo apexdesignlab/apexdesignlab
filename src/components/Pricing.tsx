@@ -5,22 +5,25 @@ const plans = [
   {
     name: "The Essentials",
     tier: "Business",
-    price: "£80",
+    price: "$80",
+    pricePound: "£80",
     features: ["3 Pages", "1 Domain", "Static / Booking Site", "Custom Design", "Managed Hosting"],
     popular: false,
   },
   {
     name: "Growth Lab",
     tier: "Starter",
-    price: "£100",
+    price: "$100",
+    pricePound: "£100",
     features: ["8 Pages", "2 Domains", "Compatible Features", "Full SEO Suite", "Priority Support"],
     popular: true,
   },
   {
     name: "Apex Elite",
-    tier: "Elite",
-    price: "£140",
-    features: ["15 Pages", "5 Domains", "Payments / Custom Types", "E-commerce Suite", "Dedicated Line"],
+    tier: "Premium",
+    price: "$140",
+    pricePound: "£140",
+    features: ["Payments & Custom Types", "Up to 15 Pages", "5 Domains Included", "Full E-commerce Suite", "Premium Hosting & CDN", "Advanced SEO Strategy", "Dedicated Support Line"],
     popular: false,
   },
 ];
@@ -35,7 +38,7 @@ const Pricing = () => (
         transition={{ duration: 0.6 }}
         className="text-center mb-16"
       >
-        <p className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">The Triple Threat</p>
+        <p className="text-xs font-mono font-semibold text-primary uppercase tracking-[0.3em] mb-3">The Triple Threat</p>
         <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Pricing Plans</h2>
       </motion.div>
 
@@ -52,18 +55,21 @@ const Pricing = () => (
             }`}
           >
             {plan.popular && (
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-primary text-primary-foreground text-xs font-bold uppercase tracking-wider">
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary text-primary-foreground text-xs font-bold uppercase tracking-wider">
                 Popular
               </div>
             )}
 
-            <p className="text-xs font-semibold text-muted-foreground uppercase tracking-widest mb-1">{plan.tier}</p>
+            <p className="text-xs font-mono font-semibold text-muted-foreground uppercase tracking-widest mb-1">{plan.tier}</p>
             <h3 className="text-xl font-bold mb-4">{plan.name}</h3>
 
             <div className="mb-6">
               <span className="text-4xl font-extrabold">{plan.price}</span>
-              <span className="text-muted-foreground text-sm">/mo</span>
+              <span className="text-muted-foreground text-sm"> / {plan.pricePound}</span>
+              <div className="text-muted-foreground text-sm">/ month</div>
             </div>
+
+            <div className="h-px bg-border mb-6" />
 
             <ul className="space-y-3 mb-8 flex-1">
               {plan.features.map((f) => (
@@ -75,7 +81,8 @@ const Pricing = () => (
             </ul>
 
             <button
-              className={`w-full py-3 rounded-full font-semibold text-sm transition-all duration-300 ${
+              onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+              className={`w-full py-3 font-semibold text-sm uppercase tracking-wider transition-all duration-300 ${
                 plan.popular
                   ? "bg-primary text-primary-foreground hover:shadow-[0_0_25px_-3px_hsl(var(--primary)/0.5)]"
                   : "border border-border text-foreground hover:bg-secondary"
@@ -86,6 +93,10 @@ const Pricing = () => (
           </motion.div>
         ))}
       </div>
+
+      <p className="text-center text-sm text-muted-foreground mt-10">
+        Not sure which plan fits? <span className="text-primary cursor-pointer" onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}>Reach out</span> — we'll give you an exact quote at no cost.
+      </p>
     </div>
   </section>
 );

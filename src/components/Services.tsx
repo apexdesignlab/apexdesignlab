@@ -5,19 +5,22 @@ const services = [
   {
     icon: Palette,
     title: "Custom Web Design",
-    desc: "Bespoke designs tailored to your brand identity, audience, and business goals.",
+    desc: "Fully bespoke websites designed from scratch to reflect your brand, attract your audience, and convert browsers into buyers. No templates — ever.",
+    tags: ["UI/UX", "Responsive", "Brand-Aligned"],
     span: "lg:col-span-2",
   },
   {
     icon: Cloud,
     title: "Hosting & Deployment",
-    desc: "Lightning-fast hosting with global CDN, automated backups, and zero-downtime deploys.",
+    desc: "We handle the entire technical stack — domain, SSL certificates, CDN, performance optimization, and uptime monitoring.",
+    tags: ["SSL Included", "CDN", "99.9% Uptime"],
     span: "lg:col-span-1",
   },
   {
     icon: Wrench,
     title: "Maintenance & Support",
     desc: "Ongoing updates, security patches, and performance monitoring so you can focus on your business.",
+    tags: ["Updates", "Security", "Monitoring"],
     span: "lg:col-span-3",
   },
 ];
@@ -33,8 +36,8 @@ const Services = () => (
         transition={{ duration: 0.6 }}
         className="text-center mb-16"
       >
-        <p className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">Services</p>
-        <h2 className="text-4xl md:text-5xl font-bold tracking-tight">What We Do Best</h2>
+        <p className="text-xs font-mono font-semibold text-primary uppercase tracking-[0.3em] mb-3">What We Build</p>
+        <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Our Services</h2>
       </motion.div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -47,11 +50,14 @@ const Services = () => (
             transition={{ duration: 0.5, delay: i * 0.1 }}
             className={`glass-card-hover p-10 ${s.span}`}
           >
-            <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
-              <s.icon className="w-7 h-7 text-primary" />
-            </div>
+            <div className="text-xs font-mono text-primary mb-4">0{i + 1}</div>
             <h3 className="text-2xl font-bold mb-3">{s.title}</h3>
-            <p className="text-muted-foreground leading-relaxed">{s.desc}</p>
+            <p className="text-muted-foreground leading-relaxed mb-6">{s.desc}</p>
+            <div className="flex flex-wrap gap-2">
+              {s.tags.map((tag) => (
+                <span key={tag} className="text-xs font-mono px-3 py-1 border border-border text-muted-foreground">{tag}</span>
+              ))}
+            </div>
           </motion.div>
         ))}
       </div>

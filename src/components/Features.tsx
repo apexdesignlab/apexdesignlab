@@ -18,7 +18,7 @@ const Features = () => (
         transition={{ duration: 0.6 }}
         className="text-center mb-16"
       >
-        <p className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">What We Offer</p>
+        <p className="text-xs font-mono font-semibold text-primary uppercase tracking-[0.3em] mb-3">What We Offer</p>
         <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Built for Performance</h2>
       </motion.div>
 
@@ -32,7 +32,7 @@ const Features = () => (
             transition={{ duration: 0.5, delay: i * 0.1 }}
             className="glass-card-hover p-8 group"
           >
-            <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/20 transition-colors">
+            <div className="w-12 h-12 bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/20 transition-colors">
               <f.icon className="w-6 h-6 text-primary" />
             </div>
             <h3 className="text-lg font-bold mb-2">{f.title}</h3>
