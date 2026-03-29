@@ -6,7 +6,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+    <section className="relative min-h-[85vh] flex items-center overflow-hidden">
       <div className="absolute inset-0 mesh-gradient" />
       <div className="absolute top-1/4 left-1/3 w-[600px] h-[600px] rounded-full bg-primary/5 blur-[120px]" />
 
@@ -34,7 +34,7 @@ const Hero = () => {
             We're a team of AI experts and seasoned web designers who build high-performance websites that look stunning, load fast, and convert visitors into customers — all fully hosted and managed.
           </p>
 
-          <div className="flex items-center gap-6 mb-20">
+          <div className="flex items-center gap-6 mb-10">
             <button
               onClick={() => scrollTo("contact")}
               className="px-8 py-4 bg-primary text-primary-foreground font-semibold text-sm uppercase tracking-wider hover:shadow-[0_0_40px_-5px_hsl(var(--primary)/0.5)] transition-all duration-300"

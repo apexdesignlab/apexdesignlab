@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const Footer = () => {
   return (
-    <footer id="contact" className="relative py-32 border-t border-border">
+    <footer id="contact" className="relative py-16 border-t border-border">
       <div className="absolute inset-0 mesh-gradient opacity-30" />
       <div className="container relative z-10 mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">

@@ -26,7 +26,7 @@ const services = [
 ];
 
 const Services = () => (
-  <section id="services" className="relative py-32">
+  <section id="services" className="relative py-16">
     <div className="absolute inset-0 mesh-gradient opacity-50" />
     <div className="container relative z-10 mx-auto px-6">
       <motion.div
