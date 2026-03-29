@@ -4,12 +4,12 @@ import { Check } from "lucide-react";
 const plans = [
   {
     name: "Growth Lab",
-    tier: "Starter",
-    price: "$/£ 150 upfront cost"
+    tier: "Starter"
     price: "$80",
     pricePound: "£80",
     features: ["3 Pages", "1 Domain", "Static / Booking Website", "Custom Design", "Managed Hosting", "Deposit cost after you see your demo"],
     popular: false,
+  *£150 Deposit required after demo to secure build slot.
   },
   {
     name: "The Essentials",
@@ -19,6 +19,7 @@ const plans = [
     pricePound: "£100",
     features: ["8 Pages", "2 Domains", "Compatible Features", "Full SEO Suite", "Priority Support", "Deposit cost after you see your demo"],
     popular: true,
+  *£150 Deposit required after demo to secure build slot.
   },
   {
     name: "Apex Elite",
@@ -28,6 +29,7 @@ const plans = [
     pricePound: "£140",
     features: ["Payments & Custom Types", "Up to 15 Pages", "5 Domains Included", "Full E-commerce Suite", "Premium Hosting & CDN", "Advanced SEO Strategy", "Dedicated Support Line", "Deposit cost after you see your demo"],
     popular: false,
+  *£150 Deposit required after demo to secure build slot.
   },
 ];
 
