@@ -29,7 +29,7 @@ const plans = [
 ];
 
 const Pricing = () => (
-  <section id="pricing" className="relative py-32">
+  <section id="pricing" className="relative py-16">
     <div className="container mx-auto px-6">
       <motion.div
         initial={{ opacity: 0, y: 30 }}

@@ -16,7 +16,7 @@ const Process = () => (
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.6 }}
-        className="text-center mb-20"
+        className="text-center mb-12"
       >
         <p className="text-xs font-mono font-semibold text-primary uppercase tracking-[0.3em] mb-3">How It Works</p>
         <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Our 4-Step Process</h2>
