@@ -7,7 +7,7 @@ const plans = [
     tier: "Starter",
     price: "$80",
     pricePound: "£80",
-    features: ["3 Pages", "1 Domain", "Static / Booking Site", "Custom Design", "Managed Hosting"],
+    features: ["3 Pages", "1 Domain", "Static / Booking Site", "Custom Design", "Managed Hosting", "Deposit afteryou see your demo"],
     popular: false,
   },
   {
@@ -15,7 +15,7 @@ const plans = [
     tier: "Business",
     price: "$100",
     pricePound: "£100",
-    features: ["8 Pages", "2 Domains", "Compatible Features", "Full SEO Suite", "Priority Support"],
+    features: ["8 Pages", "2 Domains", "Compatible Features", "Full SEO Suite", "Priority Support", "Deposit afteryou see your demo"],
     popular: true,
   },
   {
@@ -23,7 +23,7 @@ const plans = [
     tier: "Premium",
     price: "$140",
     pricePound: "£140",
-    features: ["Payments & Custom Types", "Up to 15 Pages", "5 Domains Included", "Full E-commerce Suite", "Premium Hosting & CDN", "Advanced SEO Strategy", "Dedicated Support Line"],
+    features: ["Payments & Custom Types", "Up to 15 Pages", "5 Domains Included", "Full E-commerce Suite", "Premium Hosting & CDN", "Advanced SEO Strategy", "Dedicated Support Line", "Deposit afteryou see your demo"],
     popular: false,
   },
 ];
