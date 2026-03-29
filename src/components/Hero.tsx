@@ -50,14 +50,14 @@ const Hero = () => {
           </div>
 
           {/* Stats bar */}
-          <div className="flex items-center gap-0 border-t border-border">
+          <div className="grid grid-cols-4 border-t border-b border-border">
             {[
               { num: "AI", label: "Powered Design" },
               { num: "$80", label: "Starting / Month" },
               { num: "100%", label: "Custom Built" },
               { num: "∞", label: "Revisions Supported" },
             ].map((stat, i) => (
-              <div key={i} className="flex-1 py-6 border-r border-border last:border-r-0">
+              <div key={i} className="py-6 px-4 first:pl-0 border-r border-border last:border-r-0">
                 <div className="text-2xl md:text-3xl font-bold text-primary">{stat.num}</div>
                 <div className="text-xs font-mono text-muted-foreground mt-1 uppercase tracking-wider">{stat.label}</div>
               </div>
