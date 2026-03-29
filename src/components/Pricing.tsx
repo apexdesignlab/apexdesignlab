@@ -5,6 +5,7 @@ const plans = [
   {
     name: "Growth Lab",
     tier: "Starter",
+    price: "$/£ 150 upfront cost"
     price: "$80",
     pricePound: "£80",
     features: ["3 Pages", "1 Domain", "Static / Booking Site", "Custom Design", "Managed Hosting", "Deposit cost after you see your demo"],
@@ -13,6 +14,7 @@ const plans = [
   {
     name: "The Essentials",
     tier: "Business",
+    price: "$/£ 150 upfront cost"
     price: "$100",
     pricePound: "£100",
     features: ["8 Pages", "2 Domains", "Compatible Features", "Full SEO Suite", "Priority Support", "Deposit cost after you see your demo"],
@@ -21,6 +23,7 @@ const plans = [
   {
     name: "Apex Elite",
     tier: "Premium",
+    price: "$/£ 150 upfront cost"
     price: "$140",
     pricePound: "£140",
     features: ["Payments & Custom Types", "Up to 15 Pages", "5 Domains Included", "Full E-commerce Suite", "Premium Hosting & CDN", "Advanced SEO Strategy", "Dedicated Support Line", "Deposit cost after you see your demo"],
