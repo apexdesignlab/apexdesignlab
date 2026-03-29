@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,44 +6,44 @@
 
 @layer base {
   :root {
-    --background: 0 0% 1.5%;
-    --foreground: 0 0% 98%;
+    --background: 0 0% 3%;
+    --foreground: 0 0% 96%;
 
-    --card: 0 0% 5%;
-    --card-foreground: 0 0% 98%;
+    --card: 0 0% 6%;
+    --card-foreground: 0 0% 96%;
 
-    --popover: 0 0% 5%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 0 0% 6%;
+    --popover-foreground: 0 0% 96%;
 
-    --primary: 210 100% 50%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 187 100% 50%;
+    --primary-foreground: 0 0% 3%;
 
-    --secondary: 0 0% 8%;
-    --secondary-foreground: 0 0% 95%;
+    --secondary: 0 0% 9%;
+    --secondary-foreground: 0 0% 90%;
 
-    --muted: 0 0% 10%;
-    --muted-foreground: 0 0% 50%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 48%;
 
-    --accent: 210 100% 50%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 187 100% 50%;
+    --accent-foreground: 0 0% 3%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 12%;
-    --input: 0 0% 12%;
-    --ring: 210 100% 50%;
+    --border: 0 0% 14%;
+    --input: 0 0% 14%;
+    --ring: 187 100% 50%;
 
-    --radius: 0.75rem;
+    --radius: 0rem;
 
     /* Custom tokens */
-    --glow: 210 100% 50%;
-    --surface-glass: 0 0% 6%;
-    --surface-glass-border: 0 0% 15%;
+    --glow: 187 100% 50%;
+    --surface-glass: 0 0% 7%;
+    --surface-glass-border: 0 0% 16%;
 
-    --gradient-mesh-1: radial-gradient(ellipse at 20% 50%, hsl(210 100% 50% / 0.1) 0%, transparent 50%);
-    --gradient-mesh-2: radial-gradient(ellipse at 80% 20%, hsl(250 80% 55% / 0.08) 0%, transparent 50%);
-    --gradient-mesh-3: radial-gradient(ellipse at 50% 80%, hsl(190 100% 45% / 0.07) 0%, transparent 50%);
+    --gradient-mesh-1: radial-gradient(ellipse at 20% 50%, hsl(187 100% 50% / 0.08) 0%, transparent 50%);
+    --gradient-mesh-2: radial-gradient(ellipse at 80% 20%, hsl(220 80% 55% / 0.06) 0%, transparent 50%);
+    --gradient-mesh-3: radial-gradient(ellipse at 50% 80%, hsl(160 100% 45% / 0.05) 0%, transparent 50%);
   }
 }
 
@@ -53,8 +53,8 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
-    font-family: 'Plus Jakarta Sans', sans-serif;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Space Grotesk', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
@@ -64,7 +64,7 @@
 
 @layer components {
   .glass-card {
-    @apply bg-card/50 backdrop-blur-xl border border-surface-glass-border rounded-2xl;
+    @apply bg-card/50 backdrop-blur-xl border border-surface-glass-border;
   }
 
   .glass-card-hover {
@@ -79,11 +79,15 @@
   }
 
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-cyan-400;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-emerald-400;
   }
 
   .glow-line {
     @apply h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent;
+  }
+
+  .font-mono {
+    font-family: 'Space Mono', monospace;
   }
 }
 
