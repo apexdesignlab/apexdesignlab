@@ -8,7 +8,7 @@ const plans = [
     price: "$/£ 150 upfront cost"
     price: "$80",
     pricePound: "£80",
-    features: ["3 Pages", "1 Domain", "Static / Booking Site", "Custom Design", "Managed Hosting", "Deposit cost after you see your demo"],
+    features: ["3 Pages", "1 Domain", "Static / Booking Website", "Custom Design", "Managed Hosting", "Deposit cost after you see your demo"],
     popular: false,
   },
   {
