@@ -3,16 +3,16 @@ import { Check } from "lucide-react";
 
 const plans = [
   {
-    name: "The Essentials",
-    tier: "Business",
+    name: "Growth Lab",
+    tier: "Starter",
     price: "$80",
     pricePound: "£80",
     features: ["3 Pages", "1 Domain", "Static / Booking Site", "Custom Design", "Managed Hosting"],
     popular: false,
   },
   {
-    name: "Growth Lab",
-    tier: "Starter",
+    name: "The Essentials",
+    tier: "Business",
     price: "$100",
     pricePound: "£100",
     features: ["8 Pages", "2 Domains", "Compatible Features", "Full SEO Suite", "Priority Support"],
