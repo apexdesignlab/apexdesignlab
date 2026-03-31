@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,44 +6,43 @@
 
 @layer base {
   :root {
-    --background: 0 0% 3%;
-    --foreground: 0 0% 96%;
+    --background: 222 47% 5%;
+    --foreground: 210 40% 98%;
 
-    --card: 0 0% 6%;
-    --card-foreground: 0 0% 96%;
+    --card: 222 47% 8%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 0 0% 6%;
-    --popover-foreground: 0 0% 96%;
+    --popover: 222 47% 8%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 187 100% 50%;
-    --primary-foreground: 0 0% 3%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 222 47% 5%;
 
-    --secondary: 0 0% 9%;
-    --secondary-foreground: 0 0% 90%;
+    --secondary: 222 47% 12%;
+    --secondary-foreground: 210 40% 90%;
 
-    --muted: 0 0% 12%;
-    --muted-foreground: 0 0% 48%;
+    --muted: 222 30% 14%;
+    --muted-foreground: 215 20% 55%;
 
-    --accent: 187 100% 50%;
-    --accent-foreground: 0 0% 3%;
+    --accent: 45 93% 58%;
+    --accent-foreground: 222 47% 5%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 14%;
-    --input: 0 0% 14%;
-    --ring: 187 100% 50%;
+    --border: 222 30% 16%;
+    --input: 222 30% 16%;
+    --ring: 217 91% 60%;
 
-    --radius: 0rem;
+    --radius: 0.5rem;
 
-    /* Custom tokens */
-    --glow: 187 100% 50%;
-    --surface-glass: 0 0% 7%;
-    --surface-glass-border: 0 0% 16%;
+    --glow: 217 91% 60%;
+    --surface-glass: 222 47% 8%;
+    --surface-glass-border: 222 30% 18%;
 
-    --gradient-mesh-1: radial-gradient(ellipse at 20% 50%, hsl(187 100% 50% / 0.08) 0%, transparent 50%);
-    --gradient-mesh-2: radial-gradient(ellipse at 80% 20%, hsl(220 80% 55% / 0.06) 0%, transparent 50%);
-    --gradient-mesh-3: radial-gradient(ellipse at 50% 80%, hsl(160 100% 45% / 0.05) 0%, transparent 50%);
+    --gradient-mesh-1: radial-gradient(ellipse at 20% 50%, hsl(217 91% 60% / 0.08) 0%, transparent 50%);
+    --gradient-mesh-2: radial-gradient(ellipse at 80% 20%, hsl(45 93% 58% / 0.05) 0%, transparent 50%);
+    --gradient-mesh-3: radial-gradient(ellipse at 50% 80%, hsl(217 91% 60% / 0.04) 0%, transparent 50%);
   }
 }
 
@@ -54,21 +53,24 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Inter', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
-    font-feature-settings: 'kern' 1, 'liga' 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
   }
 }
 
 @layer components {
   .glass-card {
-    @apply bg-card/50 backdrop-blur-xl border border-surface-glass-border;
+    @apply bg-card/60 backdrop-blur-xl border border-surface-glass-border;
   }
 
   .glass-card-hover {
-    @apply glass-card transition-all duration-500 hover:border-primary/30 hover:shadow-[0_0_30px_-5px_hsl(var(--primary)/0.2)];
+    @apply glass-card transition-all duration-500 hover:border-primary/30 hover:shadow-[0_0_30px_-5px_hsl(var(--primary)/0.15)];
   }
 
   .mesh-gradient {
@@ -79,15 +81,11 @@
   }
 
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-emerald-400;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
   }
 
   .glow-line {
-    @apply h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent;
-  }
-
-  .font-mono {
-    font-family: 'Space Mono', monospace;
+    @apply h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent;
   }
 }
 
