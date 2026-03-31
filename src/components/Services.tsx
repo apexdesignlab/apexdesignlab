@@ -1,63 +1,65 @@
 import { motion } from "framer-motion";
-import { Palette, Cloud, Wrench } from "lucide-react";
+import { Globe, ShoppingCart, BarChart3, Share2, Rocket } from "lucide-react";
 
 const services = [
   {
-    icon: Palette,
-    title: "Custom Web Design",
-    desc: "Fully bespoke websites designed from scratch to reflect your brand, attract your audience, and convert browsers into buyers. No templates — ever.",
-    tags: ["UI/UX", "Responsive", "Brand-Aligned"],
-    span: "lg:col-span-2",
+    icon: Globe,
+    title: "AI-Powered Custom Websites",
+    desc: "Bespoke websites built with AI speed and human precision. Optimized for conversions, SEO, and performance from day one.",
   },
   {
-    icon: Cloud,
-    title: "Hosting & Deployment",
-    desc: "We handle the entire technical stack — domain, SSL certificates, CDN, performance optimization, and uptime monitoring.",
-    tags: ["SSL Included", "CDN", "99.9% Uptime"],
-    span: "lg:col-span-1",
+    icon: ShoppingCart,
+    title: "Shopify & E-commerce Setup",
+    desc: "Conversion-focused online stores that turn browsers into buyers. Complete with payment processing, inventory, and analytics.",
   },
   {
-    icon: Wrench,
-    title: "Maintenance & Support",
-    desc: "Ongoing updates, security patches, and performance monitoring so you can focus on your business.",
-    tags: ["Updates", "Security", "Monitoring"],
-    span: "lg:col-span-3",
+    icon: BarChart3,
+    title: "Digital Marketing & SEO",
+    desc: "Data-driven marketing strategies that drive organic traffic and qualified leads to your business.",
+  },
+  {
+    icon: Share2,
+    title: "Social Media & Content",
+    desc: "Strategic social media management and content creation that builds brand authority and engages your audience.",
+  },
+  {
+    icon: Rocket,
+    title: "All-In-One Business Buildout",
+    desc: "Website + store + marketing + social — everything you need to launch and grow, delivered as one cohesive package.",
   },
 ];
 
 const Services = () => (
-  <section id="services" className="relative py-16">
-    <div className="absolute inset-0 mesh-gradient opacity-50" />
-    <div className="container relative z-10 mx-auto px-6">
+  <section id="services" className="relative py-24 bg-secondary/30">
+    <div className="container mx-auto px-6">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.6 }}
         className="text-center mb-16"
       >
-        <p className="text-xs font-mono font-semibold text-primary uppercase tracking-[0.3em] mb-3">What We Build</p>
-        <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Our Services</h2>
+        <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-4">What We Do</p>
+        <h2 className="font-display text-4xl md:text-5xl font-bold tracking-tight mb-4">Our Services</h2>
+        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          We deliver faster than traditional agencies and better results than pure AI tools.
+        </p>
       </motion.div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
         {services.map((s, i) => (
           <motion.div
             key={s.title}
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: i * 0.1 }}
-            className={`glass-card-hover p-10 ${s.span}`}
+            transition={{ delay: i * 0.1 }}
+            className={`glass-card-hover p-8 ${i === 4 ? "md:col-span-2 lg:col-span-1" : ""}`}
           >
-            <div className="text-xs font-mono text-primary mb-4">0{i + 1}</div>
-            <h3 className="text-2xl font-bold mb-3">{s.title}</h3>
-            <p className="text-muted-foreground leading-relaxed mb-6">{s.desc}</p>
-            <div className="flex flex-wrap gap-2">
-              {s.tags.map((tag) => (
-                <span key={tag} className="text-xs font-mono px-3 py-1 border border-border text-muted-foreground">{tag}</span>
-              ))}
+            <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-5">
+              <s.icon className="w-6 h-6 text-primary" />
             </div>
+            <h3 className="font-display text-lg font-bold mb-3">{s.title}</h3>
+            <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
           </motion.div>
         ))}
       </div>
