@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles } from "lucide-react";
 
 const Hero = () => {
   const scrollTo = (id: string) => {
@@ -7,7 +6,7 @@ const Hero = () => {
   };
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center overflow-hidden">
+    <section id="hero" className="relative min-h-[85vh] flex items-center overflow-hidden">
       <div className="absolute inset-0 mesh-gradient" />
       <div className="absolute top-1/4 left-1/4 w-[800px] h-[800px] rounded-full bg-primary/5 blur-[150px]" />
       <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-accent/5 blur-[120px]" />
@@ -20,7 +19,7 @@ const Hero = () => {
           className="max-w-4xl"
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-8">
-            <Sparkles className="w-4 h-4 text-primary" />
+            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
             <span className="text-sm text-primary font-medium">AI-Powered Web Design Studio</span>
           </div>
 
@@ -33,13 +32,13 @@ const Hero = () => {
             We combine the speed of AI with expert strategy. Our designers and AI specialists build your website on paper first — mapping strategy, user flows, and conversion paths — then bring it to life with AI and refine every detail for maximum results.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-16">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-10">
             <button
               onClick={() => scrollTo("contact")}
               className="group flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground font-semibold rounded-lg hover:shadow-[0_0_40px_-5px_hsl(var(--primary)/0.5)] transition-all duration-300"
             >
               Get Your Free AI Site Audit
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <span className="inline-block group-hover:translate-x-1 transition-transform">→</span>
             </button>
             <button
               onClick={() => scrollTo("portfolio")}

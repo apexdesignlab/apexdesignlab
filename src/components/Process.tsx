@@ -1,30 +1,29 @@
 import { motion } from "framer-motion";
-import { FileText, Cpu, Paintbrush } from "lucide-react";
 
 const steps = [
   {
-    icon: FileText,
     step: "01",
     title: "Strategy & Planning",
     desc: "Expert designers and strategists build your site on paper — wireframes, user journeys, conversion funnels, and brand messaging. Every decision is intentional.",
     color: "text-primary",
     bg: "bg-primary/10",
+    border: "border-primary/30",
   },
   {
-    icon: Cpu,
     step: "02",
     title: "AI Acceleration",
     desc: "We use advanced AI tools (Lovable, v0, Claude) to turn the strategic plan into a real, functional website in record time. Speed without sacrificing quality.",
     color: "text-accent",
     bg: "bg-accent/10",
+    border: "border-accent/30",
   },
   {
-    icon: Paintbrush,
     step: "03",
     title: "Human Refinement",
     desc: "Our team polishes every detail — flawless UX, performance optimization, accessibility compliance, and conversion fine-tuning. The result is pixel-perfect.",
     color: "text-emerald-400",
     bg: "bg-emerald-400/10",
+    border: "border-emerald-400/30",
   },
 ];
 
@@ -52,11 +51,11 @@ const Process = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.15 }}
-            className="glass-card-hover p-8 relative"
+            className={`glass-card-hover p-8 relative border-t-2 ${s.border}`}
           >
-            <div className={`w-14 h-14 rounded-xl ${s.bg} flex items-center justify-center mb-6`}>
-              <s.icon className={`w-7 h-7 ${s.color}`} />
-            </div>
+            <span className={`inline-block text-5xl font-display font-extrabold ${s.color} opacity-20 mb-4`}>
+              {s.step}
+            </span>
             <span className={`text-sm font-semibold ${s.color} mb-2 block`}>Step {s.step}</span>
             <h3 className="font-display text-xl font-bold mb-3">{s.title}</h3>
             <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
