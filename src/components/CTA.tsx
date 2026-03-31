@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
 
 const CTA = () => (
   <section id="contact" className="relative py-24">
@@ -26,7 +25,7 @@ const CTA = () => (
             className="group flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground font-semibold rounded-lg hover:shadow-[0_0_40px_-5px_hsl(var(--primary)/0.5)] transition-all duration-300"
           >
             Start Your Free AI Site Audit
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            <span className="inline-block group-hover:translate-x-1 transition-transform">→</span>
           </a>
           <a
             href="https://docs.google.com/forms/d/e/1FAIpQLSeYkQMR_vd8ha9FmlaIyv6705ByTCYv2_7O-SxtRw56QU3lKQ/viewform?usp=dialog"

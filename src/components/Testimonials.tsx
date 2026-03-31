@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { Star, Quote } from "lucide-react";
 
 const testimonials = [
   {
@@ -53,8 +52,8 @@ const Testimonials = () => (
             transition={{ delay: i * 0.1 }}
             className="glass-card-hover p-8 flex flex-col"
           >
-            <Quote className="w-8 h-8 text-primary/30 mb-4" />
-            <p className="text-foreground leading-relaxed mb-6 flex-1">"{t.quote}"</p>
+            <span className="text-4xl font-display font-bold text-primary/20 mb-4">"</span>
+            <p className="text-foreground leading-relaxed mb-6 flex-1">{t.quote}</p>
             <div className="flex items-center justify-between pt-4 border-t border-border">
               <div>
                 <p className="font-display font-semibold">{t.name}</p>
@@ -66,7 +65,7 @@ const Testimonials = () => (
             </div>
             <div className="flex gap-1 mt-3">
               {[...Array(5)].map((_, j) => (
-                <Star key={j} className="w-4 h-4 fill-accent text-accent" />
+                <span key={j} className="text-accent text-sm">★</span>
               ))}
             </div>
           </motion.div>

@@ -1,5 +1,3 @@
-import { Heart } from "lucide-react";
-
 const Footer = () => (
   <footer className="border-t border-border py-12">
     <div className="container mx-auto px-6">
@@ -48,9 +46,7 @@ const Footer = () => (
 
       <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
         <p>© {new Date().getFullYear()} Apex Design Lab. All rights reserved.</p>
-        <p className="flex items-center gap-1.5">
-          Built with <Heart className="w-3.5 h-3.5 text-destructive fill-destructive" /> using Lovable + human expertise
-        </p>
+        <p>Built with craft using Lovable + human expertise</p>
       </div>
     </div>
   </footer>

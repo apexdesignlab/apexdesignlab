@@ -1,11 +1,10 @@
 import { motion } from "framer-motion";
-import { AlertTriangle, TrendingDown, Search, Zap } from "lucide-react";
 
 const problems = [
-  { icon: TrendingDown, title: "Low Conversions", desc: "Beautiful templates that don't guide visitors toward action." },
-  { icon: Search, title: "Poor SEO", desc: "AI-generated code often misses critical SEO fundamentals." },
-  { icon: AlertTriangle, title: "No Strategy", desc: "Jumping straight to design without understanding your audience." },
-  { icon: Zap, title: "Not Scalable", desc: "Quick builds that break down as your business grows." },
+  { label: "01", title: "Low Conversions", desc: "Beautiful templates that don't guide visitors toward action." },
+  { label: "02", title: "Poor SEO", desc: "AI-generated code often misses critical SEO fundamentals." },
+  { label: "03", title: "No Strategy", desc: "Jumping straight to design without understanding your audience." },
+  { label: "04", title: "Not Scalable", desc: "Quick builds that break down as your business grows." },
 ];
 
 const Problem = () => (
@@ -36,9 +35,9 @@ const Problem = () => (
             transition={{ delay: i * 0.1 }}
             className="glass-card-hover p-6 text-center"
           >
-            <div className="w-12 h-12 mx-auto mb-4 rounded-lg bg-destructive/10 flex items-center justify-center">
-              <p.icon className="w-6 h-6 text-destructive" />
-            </div>
+            <span className="inline-block w-12 h-12 leading-[3rem] mx-auto mb-4 rounded-lg bg-destructive/10 text-destructive font-display font-bold text-lg">
+              {p.label}
+            </span>
             <h3 className="font-display font-semibold text-lg mb-2">{p.title}</h3>
             <p className="text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
           </motion.div>

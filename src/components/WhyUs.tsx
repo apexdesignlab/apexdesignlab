@@ -1,24 +1,23 @@
 import { motion } from "framer-motion";
-import { Zap, Target, Handshake, DollarSign } from "lucide-react";
 
 const reasons = [
   {
-    icon: Zap,
+    num: "01",
     title: "Speed of AI + Strategy of Experts",
     desc: "Get a website in days, not months — built on a foundation of proven conversion strategy.",
   },
   {
-    icon: Target,
+    num: "02",
     title: "Revenue-Focused Designs",
     desc: "Every design decision is backed by data and optimized to drive real business results — not just pretty pixels.",
   },
   {
-    icon: Handshake,
+    num: "03",
     title: "Full-Service Growth Partnership",
     desc: "We're not one-and-done. We stay on as your digital partner, continuously optimizing and growing your online presence.",
   },
   {
-    icon: DollarSign,
+    num: "04",
     title: "Transparent, Fixed-Price Packages",
     desc: "No hidden fees. Clear pricing with optional monthly growth retainers that scale with your business.",
   },
@@ -52,9 +51,9 @@ const WhyUs = () => (
               transition={{ delay: i * 0.1 }}
               className="flex gap-5 glass-card-hover p-6"
             >
-              <div className="w-12 h-12 shrink-0 rounded-xl bg-primary/10 flex items-center justify-center">
-                <r.icon className="w-6 h-6 text-primary" />
-              </div>
+              <span className="w-12 h-12 shrink-0 rounded-xl bg-primary/10 flex items-center justify-center text-primary font-display font-bold">
+                {r.num}
+              </span>
               <div>
                 <h3 className="font-display font-semibold text-lg mb-1">{r.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{r.desc}</p>

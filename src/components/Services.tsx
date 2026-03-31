@@ -1,29 +1,28 @@
 import { motion } from "framer-motion";
-import { Globe, ShoppingCart, BarChart3, Share2, Rocket } from "lucide-react";
 
 const services = [
   {
-    icon: Globe,
+    marker: "A",
     title: "AI-Powered Custom Websites",
     desc: "Bespoke websites built with AI speed and human precision. Optimized for conversions, SEO, and performance from day one.",
   },
   {
-    icon: ShoppingCart,
+    marker: "B",
     title: "Shopify & E-commerce Setup",
     desc: "Conversion-focused online stores that turn browsers into buyers. Complete with payment processing, inventory, and analytics.",
   },
   {
-    icon: BarChart3,
+    marker: "C",
     title: "Digital Marketing & SEO",
     desc: "Data-driven marketing strategies that drive organic traffic and qualified leads to your business.",
   },
   {
-    icon: Share2,
+    marker: "D",
     title: "Social Media & Content",
     desc: "Strategic social media management and content creation that builds brand authority and engages your audience.",
   },
   {
-    icon: Rocket,
+    marker: "E",
     title: "All-In-One Business Buildout",
     desc: "Website + store + marketing + social — everything you need to launch and grow, delivered as one cohesive package.",
   },
@@ -55,9 +54,9 @@ const Services = () => (
             transition={{ delay: i * 0.1 }}
             className={`glass-card-hover p-8 ${i === 4 ? "md:col-span-2 lg:col-span-1" : ""}`}
           >
-            <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-5">
-              <s.icon className="w-6 h-6 text-primary" />
-            </div>
+            <span className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-primary/10 text-primary font-display font-bold text-lg mb-5">
+              {s.marker}
+            </span>
             <h3 className="font-display text-lg font-bold mb-3">{s.title}</h3>
             <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
           </motion.div>
