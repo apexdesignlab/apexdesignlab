@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { ArrowRight, Sparkles } from "lucide-react";
 
 const Hero = () => {
   const scrollTo = (id: string) => {
@@ -6,61 +7,64 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-[85vh] flex items-center overflow-hidden">
+    <section id="hero" className="relative min-h-screen flex items-center overflow-hidden">
       <div className="absolute inset-0 mesh-gradient" />
-      <div className="absolute top-1/4 left-1/3 w-[600px] h-[600px] rounded-full bg-primary/5 blur-[120px]" />
+      <div className="absolute top-1/4 left-1/4 w-[800px] h-[800px] rounded-full bg-primary/5 blur-[150px]" />
+      <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-accent/5 blur-[120px]" />
 
-      <div className="container relative z-10 mx-auto px-6 pt-32">
+      <div className="container relative z-10 mx-auto px-6 pt-32 pb-20">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
+          className="max-w-4xl"
         >
-          <p className="font-mono text-xs uppercase tracking-[0.3em] text-primary mb-8">
-            ── AI-Powered Web Design Studio
-          </p>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-8">
+            <Sparkles className="w-4 h-4 text-primary" />
+            <span className="text-sm text-primary font-medium">AI-Powered Web Design Studio</span>
+          </div>
 
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter leading-[0.9] mb-8">
-            Design
-            <br />
-            <span className="text-transparent" style={{ WebkitTextStroke: "2px hsl(0 0% 96%)" }}>
-              Beyond
-            </span>
-            <br />
-            <span className="text-primary">Limits.</span>
+          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.05] mb-8">
+            AI-Powered Web Design That Actually{" "}
+            <span className="text-gradient">Converts</span>
           </h1>
 
-          <p className="max-w-lg text-base md:text-lg text-muted-foreground mb-10 leading-relaxed">
-            We're a team of AI experts and seasoned web designers who build high-performance websites that look stunning, load fast, and convert visitors into customers — all fully hosted and managed.
+          <p className="max-w-2xl text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed">
+            We combine the speed of AI with expert strategy. Our designers and AI specialists build your website on paper first — mapping strategy, user flows, and conversion paths — then bring it to life with AI and refine every detail for maximum results.
           </p>
 
-          <div className="flex items-center gap-6 mb-10">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-16">
             <button
               onClick={() => scrollTo("contact")}
-              className="px-8 py-4 bg-primary text-primary-foreground font-semibold text-sm uppercase tracking-wider hover:shadow-[0_0_40px_-5px_hsl(var(--primary)/0.5)] transition-all duration-300"
+              className="group flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground font-semibold rounded-lg hover:shadow-[0_0_40px_-5px_hsl(var(--primary)/0.5)] transition-all duration-300"
             >
-              Get Your Site Built →
+              Get Your Free AI Site Audit
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
             <button
               onClick={() => scrollTo("portfolio")}
-              className="text-sm font-mono text-muted-foreground hover:text-foreground transition-colors"
+              className="px-8 py-4 text-muted-foreground hover:text-foreground font-medium transition-colors border border-border rounded-lg hover:border-muted-foreground"
             >
-              ↓ See Our Work
+              View Our Work
             </button>
           </div>
 
-          {/* Stats bar */}
-          <div className="grid grid-cols-4 border-t border-b border-border">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-8 border-t border-border">
             {[
-              { num: "AI", label: "Powered Design" },
-              { num: "$80", label: "Starting / Month" },
-              { num: "100%", label: "Custom Built" },
-              { num: "∞", label: "Revisions Supported" },
+              { num: "50+", label: "Sites Launched" },
+              { num: "3x", label: "Faster Delivery" },
+              { num: "97%", label: "Client Satisfaction" },
+              { num: "2.5x", label: "Avg. Conversion Lift" },
             ].map((stat, i) => (
-              <div key={i} className="py-6 px-4 first:pl-0 border-r border-border last:border-r-0">
-                <div className="text-2xl md:text-3xl font-bold text-primary">{stat.num}</div>
-                <div className="text-xs font-mono text-muted-foreground mt-1 uppercase tracking-wider">{stat.label}</div>
-              </div>
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 + i * 0.1 }}
+              >
+                <div className="text-3xl md:text-4xl font-display font-bold text-foreground">{stat.num}</div>
+                <div className="text-sm text-muted-foreground mt-1">{stat.label}</div>
+              </motion.div>
             ))}
           </div>
         </motion.div>
