@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Menu, X } from "lucide-react";
 
 const navLinks = ["Home", "Services", "Process", "Work", "About", "Contact"];
 
@@ -63,8 +62,14 @@ const Navbar = () => {
           Book a Call
         </button>
 
-        <button className="md:hidden text-foreground" onClick={() => setMobileOpen(!mobileOpen)}>
-          {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+        <button
+          className="md:hidden text-foreground w-8 h-8 flex flex-col items-center justify-center gap-1.5"
+          onClick={() => setMobileOpen(!mobileOpen)}
+          aria-label="Toggle menu"
+        >
+          <span className={`block w-5 h-0.5 bg-current transition-all duration-300 ${mobileOpen ? "rotate-45 translate-y-1" : ""}`} />
+          <span className={`block w-5 h-0.5 bg-current transition-all duration-300 ${mobileOpen ? "opacity-0" : ""}`} />
+          <span className={`block w-5 h-0.5 bg-current transition-all duration-300 ${mobileOpen ? "-rotate-45 -translate-y-1" : ""}`} />
         </button>
       </div>
 
